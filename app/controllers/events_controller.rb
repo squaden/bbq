@@ -19,7 +19,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
 
     if @event.save
-      redirect_to @event, notice: 'Event was successfully created.' }
+      redirect_to @event, notice: 'Event was successfully created.'
     else
       render :new
     end
@@ -46,6 +46,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event),permit(:title, :address, :datetime, :description)
+    params.require(:event).permit(:title, :address, :datetime, :description)
   end
 end
