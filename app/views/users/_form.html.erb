@@ -2,7 +2,7 @@
   <%= render partial: 'partials/form_errors', locals: {model: @user} %>
 
   <div class="form-group">
-    <%= f.label :name %>
+    <%= f.label :name, 'Имя' %>
     <%= f.text_field :name, class: 'form-control' %>
   </div>
 
@@ -12,7 +12,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit 'Сохранить', class: 'btn btn-primary' %>
+    <%= f.submit 'Сохранить', class: 'btn btn-success' %>
     или <%= link_to 'Вернуться', :back %>
   </div>
 <% end %>
