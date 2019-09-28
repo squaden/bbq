@@ -4,6 +4,7 @@ ru:
       user: 'Пользователь'
       event: 'Событие'
       comment: 'Комментарий'
+      subscriptions: 'Подписка'
 
     attributes:
       user:
@@ -16,10 +17,6 @@ ru:
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
-      comment:
-        body: 'Тело'
-        user_name: 'Имя пользователя'
-
 
   controllers:
     events:
@@ -32,6 +29,10 @@ ru:
       destroyed: 'Комментарий удален'
       created: 'Ваш комментарий добавлен'
       error: 'Ошибка с комментарием'
+    subscriptions:
+      created: 'Вы подписаны на это событие'
+      destroyed: 'Участник отписан'
+      error: 'Подписка/отписка не сработала'
 
   app:
     name: 'Шашлыки'
@@ -47,3 +48,7 @@ ru:
   comments:
     comment:
       destroy_confirm: 'Вы уверены, что хотите удалить этот комменатрий?'
+
+  subscriptions:
+    subscription:
+      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
