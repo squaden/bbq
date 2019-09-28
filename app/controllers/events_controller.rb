@@ -23,7 +23,7 @@ class EventsController < ApplicationController
     @event = current_user.events.build(event_params)
 
     if @event.save
-      redirect_to @event, notice: 'Событие успешно создано!'
+      redirect_to @event, notice: I18n.t('controllers.events.created')
     else
       render :new
     end
@@ -31,7 +31,7 @@ class EventsController < ApplicationController
 
   def update
     if @event.update(event_params)
-      redirect_to @event, notice: 'Событие успешно обновлено!'
+      redirect_to @event, notice: I18n.t('controllers.events.updated')
     else
       render :edit
     end
@@ -40,7 +40,7 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
-    redirect_to events_url, notice: 'Событие успешно удалено!'
+    redirect_to events_url, notice: I18n.t('controllers.events.destroyed')
   end
 
   private
