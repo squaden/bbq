@@ -5,6 +5,7 @@ ruby '2.6.3'
 
 gem 'rails', '~> 5.2.3'
 gem 'devise'
+gem 'devise-i18n'
 gem 'twitter-bootstrap-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'puma', '~> 3.11'
