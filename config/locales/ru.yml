@@ -3,6 +3,7 @@ ru:
     models:
       user: 'Пользователь'
       event: 'Событие'
+      comment: 'Комментарий'
 
     attributes:
       user:
@@ -15,6 +16,10 @@ ru:
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
+      comment:
+        body: 'Тело'
+        user_name: 'Имя пользователя'
+
 
   controllers:
     events:
@@ -23,6 +28,10 @@ ru:
       destroyed: 'Вы удалили мероприятие :('
     users:
       updated: 'Вы обновили свой профиль'
+    comments:
+      destroyed: 'Комментарий удален'
+      created: 'Ваш комментарий добавлен'
+      error: 'Ошибка с комментарием'
 
   app:
     name: 'Шашлыки'
@@ -34,3 +43,7 @@ ru:
       few: "%{count} ошибки"
       many: "%{count} ошибок"
       other: "%{count} ошибок"
+
+  comments:
+    comment:
+      destroy_confirm: 'Вы уверены, что хотите удалить этот комменатрий?'
