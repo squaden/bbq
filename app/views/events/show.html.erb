@@ -17,14 +17,14 @@
           </div>
 
           <% if current_user_can_edit?(@event) %>
-              <div class="buffer-top">
-                <p><%= link_to 'Изменить', edit_event_path(@event),
-                              class: 'btn btn-success' %>
-                <%= link_to 'Удалить событие', event_path(@event),
+            <div class="buffer-top">
+              <p><%= link_to 'Изменить', edit_event_path(@event),
+                             class: 'btn btn-success' %>
+                 <%= link_to 'Удалить событие', event_path(@event),
                             class: 'btn btn-danger',
                             method: :delete,
                             data: {confirm: 'Точно удалить событие?'} %></p>
-              </div>
+            </div>
           <% end %>
         </div>
       </div>
@@ -58,14 +58,14 @@
         </div>
       </div>
       <% unless current_user_can_edit?(@event) %>
-      <div class="event-subscription-form">
-        <h4>Я пойду:</h4>
-        <div>
-          <%= render partial: 'subscriptions/form', locals: {
-              subscription: @new_subscription || @event.subscriptions.build
-          } %>
+        <div class="event-subscription-form">
+          <h4>Я пойду:</h4>
+          <div>
+            <%= render partial: 'subscriptions/form',
+                       locals: {subscription: @new_subscription ||
+                           @event.subscriptions.build} %>
+          </div>
         </div>
-      </div>
       <% end %>
     </div>
   </div>
