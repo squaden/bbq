@@ -10,6 +10,8 @@ gem 'russian'
 gem 'rails-i18n', '~> 5.1'
 gem 'twitter-bootstrap-rails'
 gem "font-awesome-rails"
+gem 'carrierwave'
+gem 'rmagick'
 gem 'uglifier', '>= 1.3.0'
 gem 'puma', '~> 3.11'
 gem 'jquery-rails'
