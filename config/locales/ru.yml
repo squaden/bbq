@@ -5,6 +5,7 @@ ru:
       event: 'Событие'
       comment: 'Комментарий'
       subscriptions: 'Подписка'
+      photo: 'Фотография'
 
     attributes:
       user:
@@ -24,6 +25,8 @@ ru:
       subscription:
         user_name: 'Имя пользователя'
         user_email: 'E-mail пользователя'
+      photo:
+        photo: 'Фотография'
 
   controllers:
     events:
@@ -42,6 +45,10 @@ ru:
       error: 'Подписка/отписка не сработала'
       subscribe_error: 'Нельзя подписаться на свое событие'
       email_error: 'Вы уже зарегистрированы, необходимо авторизоваться'
+    photos:
+      error: 'Что-то не так с фоткой'
+      created: 'Вы добавили фотографию к событию'
+      destroyed: 'Вы удалили фотку'
 
   app:
     name: 'Шашлыки'
