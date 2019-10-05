@@ -2,8 +2,9 @@
   <div class="col-md-4">
     <h2>Редактирование профиля <%= @user.name %></h2>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name),
-               html: { method: :put }) do |f| %>
+    <%= form_for(resource, as: resource_name,
+                           url: registration_path(resource_name),
+                           html: { method: :put }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="form-group">
@@ -16,8 +17,8 @@
       <% end %>
 
       <div class="form-group">
-        <%= f.label :password, 'Новый пароль' %> <i>(Оставьте пустым, если не хотите менять)
-      </i><br />
+        <%= f.label :password %>
+          <i>(Оставьте пустым, если не хотите менять)</i><br />
         <% if @minimum_password_length %>
           <em>Минимум <%= @minimum_password_length %> символов</em>
         <% end %>
@@ -25,12 +26,12 @@
       </div>
 
       <div class="form-group">
-        <%= f.label :password_confirmation, 'Подтверждение пароля' %><br />
+        <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, class: 'form-control' %>
       </div>
 
       <div class="form-group">
-        <%= f.label :current_password, 'Текущий пароль' %><br />
+        <%= f.label :current_password %><br />
         <%= f.password_field :current_password, class: 'form-control' %>
       </div>
 
@@ -46,7 +47,9 @@
     <h3>Удалить профиль</h3>
     <div class="form-group">
     <%= button_to "Удалить профиль", registration_path(resource_name),
-              data: { confirm: "Are you sure?" }, method: :delete,  class: 'btn btn-danger'%>
+              data: { confirm: "Вы уверены?" },
+              method: :delete,
+              class: 'btn btn-danger'%>
     </div>
     <%= link_to "Вернуться", :back %>
   </div>
