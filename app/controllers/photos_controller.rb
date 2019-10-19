@@ -33,6 +33,10 @@ class PhotosController < ApplicationController
     @event = Event.find(params[:event_id])
   end
 
+  def set_photo
+    @photo = @event.photos.find(params[:id])
+  end
+
   def photo_params
     params.fetch(:photo, {}).permit(:photo)
   end
