@@ -66,8 +66,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
     port: '587',
-    user_name: Rails.application.credentials.mail_user_name,
-    password: Rails.application.credentials.mail_user_password,
+    user_name: 'apikey',
+    password: Rails.application.credentials[:SENDGRID_API_KEY],
     authentication: 'plain',
     enable_starttls_auto: true
   }
