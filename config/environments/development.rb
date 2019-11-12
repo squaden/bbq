@@ -4,6 +4,9 @@ Rails.application.configure do
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
+  config.active_job.queue_adapter = :resque
+  config.active_job.queue_name_prefix = "bbqsq_#{Rails.env}"
+
   config.cache_classes = false
 
   # Do not eager load code on boot.
@@ -61,7 +64,7 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :letter_opener
 
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',

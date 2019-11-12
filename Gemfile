@@ -18,6 +18,8 @@ gem 'puma', '~> 3.11'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'resque', '~> 2.0'
+gem 'rspec-rails', '~> 3.4'
 
 group :development, :test do
   gem 'sqlite3'
@@ -31,6 +33,7 @@ group :development do
   gem 'capistrano-passenger', '~> 0.2'
   gem 'capistrano-rbenv', '~> 2.1'
   gem 'capistrano-bundler', '~> 1.2'
+  gem 'letter_opener'
 end
 
 group :production do
