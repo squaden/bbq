@@ -1,4 +1,4 @@
-class EventUpdateInformerJob < ApplicationJob
+class MailerNotificationJob < ApplicationJob
   queue_as :default
 
   def perform(class_name, subject)
@@ -12,4 +12,3 @@ class EventUpdateInformerJob < ApplicationJob
     end
   end
 end
-
