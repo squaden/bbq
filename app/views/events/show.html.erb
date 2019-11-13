@@ -16,7 +16,7 @@
             <p><%= @event.description %></p>
           </div>
 
-          <% if current_user_can_edit?(@event) %>
+          <% if policy(@event).edit? %>
             <div class="buffer-top">
               <p><%= link_to 'Изменить', edit_event_path(@event),
                              class: 'btn btn-success' %>
