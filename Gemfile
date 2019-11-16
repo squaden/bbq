@@ -38,6 +38,9 @@ group :development do
   gem 'capistrano-bundler', require: false
   gem 'letter_opener', require: false
   gem 'capistrano-resque', require: false
+  gem 'ed25519', '>= 1.2', '< 2.0', require: false
+  gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0', require: false
+
 end
 
 group :production do

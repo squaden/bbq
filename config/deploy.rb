@@ -1,13 +1,13 @@
 # config valid only for current version of Capistrano
-lock '3.4.0'
+lock '3.11.2'
 
 set :application, 'bbqsq'
 set :repo_url, 'git@github.com:squaden/bbq.git'
 set :deploy_to, '/home/deploy/www'
-append :linked_files, 'config/master.key'
+append :linked_files, 'config/master.key', 'config/database.yml'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads'
 
-after 'deploy:restart', 'resque:restart'
+# after 'deploy:restart', 'resque:restart'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
