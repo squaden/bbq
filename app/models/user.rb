@@ -2,7 +2,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable,
+         :omniauthable, omniauth_providers: [:vkontakte]
 
   has_many :events
   has_many :comments
@@ -18,6 +19,19 @@ class User < ApplicationRecord
 
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
+  end
+
+  def self.find_for_vkontakte_oauth(access_token)
+    email = access_token.info.email
+    url = access_token.info.urls[:Vkontakte]
+
+    where(email: email).first_or_create! do |user|
+      user.email = email
+      user.url = url
+      user.provider = access_token.provider
+      user.name = access_token.info.name
+      user.password = Devise.friendly_token.first(16)
+    end
   end
 
   private

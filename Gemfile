@@ -20,6 +20,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'resque', '~> 2.0'
 gem 'pundit'
+gem 'omniauth'
+gem 'omniauth-vkontakte'
 
 group :development, :test do
   gem 'sqlite3'
